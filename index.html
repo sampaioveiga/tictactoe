@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <title>Tic Tac Toe</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+  <link rel="stylesheet" type="text/css" href="css\tictactoe.css">
+  <script src="js\tictactoe.js"></script>
+</head>
+<body>
+  <div>
+    <p class="btn btn-primary" id="reset">Reset</p>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-secondary active" id="btn_0">
+        <input type="radio" name="options" id="option1" autocomplete="off" checked>0
+      </label>
+      <label class="btn btn-secondary" id="btn_X">
+        <input type="radio" name="options" id="option2" autocomplete="off">X
+      </label>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-1 house" id="0">-</div>
+      <div class="col-1 house" id="1">-</div>
+      <div class="col-1 house" id="2">-</div>
+    </div>
+    <div class="row">
+      <div class="col-1 house" id="3">-</div>
+      <div class="col-1 house" id="4">-</div>
+      <div class="col-1 house" id="5">-</div>
+    </div>
+    <div class="row">
+      <div class="col-1 house" id="6">-</div>
+      <div class="col-1 house" id="7">-</div>
+      <div class="col-1 house" id="8">-</div>
+    </div>
+  </div>
+</body>
+</html>
