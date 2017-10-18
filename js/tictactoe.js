@@ -1,10 +1,11 @@
 $(document).ready(function(){
   //variables
   var play = true;
+  var oponent = false;
   var turn = 0;
   var turns = 0;
   var array = ['0','1','2','3','4','5','6','7','8'];
-  console.log(array + ' ' + array.length);
+  console.log( ' ' + ' ' + array + ' ' + array.length);
 
   $("#reset").click(function() {
     $(".house").html('-');
@@ -137,9 +138,10 @@ $(document).ready(function(){
       return;
     }
     var computer = getRandomInt(0,array.length-1);
+    var array_computer = array[computer];
     write_move(array[computer]);    
     array.splice(computer,1);
-    console.log(array + ' ' + array.length + ' ' + computer + ' ' + array[computer]);
+    console.log(array_computer + ' ' + array + ' ' + array.length + ' ' + computer);
   }
 
   $(".house").click(function() {
@@ -152,9 +154,12 @@ $(document).ready(function(){
       return;
     }
     write_move(coord);
-    array.splice(coord,1);
-    console.log(array + ' ' + array.length + ' ' + coord);
-    computer_move();
+    var indexOf = array.indexOf(coord);
+    array.splice(indexOf,1);
+    console.log(coord + ' ' + array + ' ' + array.length);
+    if (oponent === false) {
+      computer_move();
+    }
   });
 
   $("#btn_X").click(function() {
@@ -173,6 +178,18 @@ $(document).ready(function(){
     turn = 0;
     $("#btn_X").removeClass('active');
     $("#btn_0").addClass('active');
+  });
+
+  $("#oponent_false").click(function() {
+    oponent = false;
+    $("#oponent_true").removeClass('active');
+    $("#oponent_false").addClass('active');
+  });
+
+  $("#oponent_true").click(function() {
+    oponent = true;
+    $("#oponent_false").removeClass('active');
+    $("#oponent_true").addClass('active');
   });
 
   function getRandomInt(min, max) {
