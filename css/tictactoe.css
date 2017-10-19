@@ -1,3 +1,10 @@
 .house {
   border:1px solid black;
+  height: 2em;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 1.5em;
+}
+.container {
+  margin-top: 1em;
 }

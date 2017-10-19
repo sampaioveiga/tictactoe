@@ -5,7 +5,6 @@ $(document).ready(function(){
   var turn = 0;
   var turns = 0;
   var array = ['0','1','2','3','4','5','6','7','8'];
-  console.log( ' ' + ' ' + array + ' ' + array.length);
 
   $("#reset").click(function() {
     $(".house").html('-');
@@ -15,13 +14,22 @@ $(document).ready(function(){
     array = ['0','1','2','3','4','5','6','7','8'];
   });
 
+  function have_winner(player) {
+    if (player === "tie") {
+      $("#modalEndGameTxt").html("The game is a tie");
+      
+    } else {
+      $("#modalEndGameTxt").html("We have a winner: " + player);
+    }
+    $('#endGame').modal();
+  }
+
   function check_first_row() {
     var a0 = $("#0").html();
     var a1 = $("#1").html();
     var a2 = $("#2").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -30,9 +38,8 @@ $(document).ready(function(){
     var a0 = $("#3").html();
     var a1 = $("#4").html();
     var a2 = $("#5").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -41,9 +48,8 @@ $(document).ready(function(){
     var a0 = $("#6").html();
     var a1 = $("#7").html();
     var a2 = $("#8").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -52,9 +58,8 @@ $(document).ready(function(){
     var a0 = $("#0").html();
     var a1 = $("#3").html();
     var a2 = $("#6").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -63,9 +68,8 @@ $(document).ready(function(){
     var a0 = $("#1").html();
     var a1 = $("#4").html();
     var a2 = $("#7").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -74,9 +78,8 @@ $(document).ready(function(){
     var a0 = $("#2").html();
     var a1 = $("#5").html();
     var a2 = $("#8").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -85,9 +88,8 @@ $(document).ready(function(){
     var a0 = $("#0").html();
     var a1 = $("#4").html();
     var a2 = $("#8").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -96,9 +98,8 @@ $(document).ready(function(){
     var a0 = $("#6").html();
     var a1 = $("#4").html();
     var a2 = $("#2").html();
-    //console.log(a0 + ' ' + a1 + ' ' + a2);
     if ( a0 === a1 && a1 === a2 && a2 != '-' ) {
-      console.log(a0 + " wins");
+      have_winner(a0);
       play = false;
     }
   }
@@ -114,12 +115,11 @@ $(document).ready(function(){
     check_second_diagonal();
     if (turns === 9 && play) {
       play = false;
-      console.log("tie");
+      have_winner("tie");
     }
   };
 
   function write_move(coord) {
-    //console.log(coord);
     $("#" + coord).html(turn);
     if (turn === 0) {
       turn = 'X';
@@ -141,7 +141,6 @@ $(document).ready(function(){
     var array_computer = array[computer];
     write_move(array[computer]);    
     array.splice(computer,1);
-    console.log(array_computer + ' ' + array + ' ' + array.length + ' ' + computer);
   }
 
   $(".house").click(function() {
@@ -156,7 +155,6 @@ $(document).ready(function(){
     write_move(coord);
     var indexOf = array.indexOf(coord);
     array.splice(indexOf,1);
-    console.log(coord + ' ' + array + ' ' + array.length);
     if (oponent === false) {
       computer_move();
     }
