@@ -1,10 +1,13 @@
-.house {
-  border:1px solid black;
-  height: 2em;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 1.5em;
-}
 .container {
   margin-top: 1em;
+}
+
+.house {
+  border: 10px solid transparent;
+  padding: 15px;
+  text-align: center;
+  line-height: 1.5em;
+  -webkit-border-image: url(https://static1.squarespace.com/static/5511fc7ce4b0a3782aa9418b/t/552c5b5ee4b0c421d2bbf5d6/1428970335272/beginning-a-mandala.jpg) 30 stretch;
+  -o-border-image: url(https://static1.squarespace.com/static/5511fc7ce4b0a3782aa9418b/t/552c5b5ee4b0c421d2bbf5d6/1428970335272/beginning-a-mandala.jpg) 30 stretch;
+  border-image: url(https://static1.squarespace.com/static/5511fc7ce4b0a3782aa9418b/t/552c5b5ee4b0c421d2bbf5d6/1428970335272/beginning-a-mandala.jpg) 30 stretch;
 }

@@ -9,6 +9,8 @@ $(document).ready(function(){
   $("#reset").click(function() {
     $(".house").html('-');
     turn = 0;
+    $("#btn_X").removeClass('active');
+    $("#btn_0").addClass('active');
     turns = 0;
     play = true;
     array = ['0','1','2','3','4','5','6','7','8'];
@@ -163,19 +165,21 @@ $(document).ready(function(){
   $("#btn_X").click(function() {
     if (turns > 0) {
       return;
+    } else {
+      turn = 'X';
+      $("#btn_0").removeClass('active');
+      $("#btn_X").addClass('active');
     }
-    turn = 'X';
-    $("#btn_0").removeClass('active');
-    $("#btn_X").addClass('active');
   });
 
   $("#btn_0").click(function() {
     if (turns > 0) {
       return;
+    } else {
+      turn = 0;
+      $("#btn_X").removeClass('active');
+      $("#btn_0").addClass('active');
     }
-    turn = 0;
-    $("#btn_X").removeClass('active');
-    $("#btn_0").addClass('active');
   });
 
   $("#oponent_false").click(function() {
